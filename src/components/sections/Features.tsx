@@ -5,34 +5,34 @@ import { Brain, Lightbulb, Users, Heart, BookOpen, Compass } from 'lucide-react'
 const Features = () => {
   const features = [
     {
-      icon: <Brain className="h-8 w-8" />,
-      title: "Developmental Guidance",
-      description: "Understand your child's developmental milestones and how to support their growth at every stage."
+      icon: <Brain className="h-7 w-7" />,
+      title: "Developmental Assessments",
+      description: "Comprehensive evaluations to identify your child's strengths, challenges, and unique developmental patterns."
     },
     {
-      icon: <Lightbulb className="h-8 w-8" />,
+      icon: <Lightbulb className="h-7 w-7" />,
       title: "Learning Strategies",
-      description: "Discover effective approaches to support your child's unique learning style and academic needs."
+      description: "Customized approaches to help your child excel academically and develop effective learning habits."
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Behavioral Support",
-      description: "Address challenging behaviors with proven techniques that foster positive change and emotional regulation."
+      icon: <Users className="h-7 w-7" />,
+      title: "Social Skills Development",
+      description: "Build confidence in social interactions through evidence-based techniques and guided practice."
     },
     {
-      icon: <Heart className="h-8 w-8" />,
-      title: "Emotional Wellbeing",
-      description: "Help your child build resilience, self-confidence, and healthy emotional expression."
+      icon: <Heart className="h-7 w-7" />,
+      title: "Emotional Regulation",
+      description: "Help your child understand and manage their emotions effectively in various situations."
     },
     {
-      icon: <BookOpen className="h-8 w-8" />,
-      title: "Parenting Skills",
-      description: "Enhance your parenting toolkit with strategies tailored to your family's specific dynamics and needs."
+      icon: <BookOpen className="h-7 w-7" />,
+      title: "Parent Coaching",
+      description: "Gain tools and strategies to navigate parenting challenges and create a supportive home environment."
     },
     {
-      icon: <Compass className="h-8 w-8" />,
-      title: "Future Planning",
-      description: "Navigate educational transitions and create roadmaps for your child's continued success."
+      icon: <Compass className="h-7 w-7" />,
+      title: "Educational Planning",
+      description: "Navigate school choices, IEPs, and learning accommodations with expert guidance and advocacy."
     }
   ];
 
@@ -45,10 +45,10 @@ const Features = () => {
               Our Services
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-brand-neutral-900 mb-6">
-              Comprehensive Support for Your Child's Journey
+              Specialized Support for Children
             </h2>
             <p className="text-lg text-brand-neutral-600">
-              Our experienced consultants provide personalized guidance across all areas of your child's development, learning, and wellbeing.
+              We provide comprehensive services to address your child's developmental, educational, and emotional needs through personalized consultations.
             </p>
           </div>
         </FadeIn>
@@ -67,7 +67,7 @@ const Features = () => {
 
 const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => {
   return (
-    <div className="h-full glass-panel rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+    <div className="h-full bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-brand-neutral-100 hover:border-brand-blue-200 group">
       <div className="bg-brand-blue-50 rounded-xl h-16 w-16 flex items-center justify-center text-brand-blue-500 mb-6 group-hover:bg-brand-blue-500 group-hover:text-white transition-colors duration-300">
         {icon}
       </div>

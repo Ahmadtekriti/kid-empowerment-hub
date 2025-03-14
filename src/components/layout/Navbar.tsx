@@ -26,12 +26,13 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300',
         isScrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-sm'
+          ? 'bg-white/90 backdrop-blur-lg shadow-sm'
           : 'bg-transparent'
       )}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <a href="/" className="text-2xl font-display font-bold text-brand-blue-600">
+        <a href="/" className="text-2xl font-display font-bold text-brand-blue-600 flex items-center">
+          <span className="w-10 h-10 bg-brand-blue-500 rounded-full flex items-center justify-center text-white mr-2">CS</span>
           ChildSupport
         </a>
 

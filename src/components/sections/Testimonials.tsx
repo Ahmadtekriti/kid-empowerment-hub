@@ -1,25 +1,28 @@
 
 import { FadeIn } from '@/components/ui/FadeIn';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "The strategies they provided transformed our daily routines. My son's behavior has improved significantly, and I finally feel equipped to handle challenging situations.",
-      author: "Sarah M.",
-      role: "Parent of a 7-year-old",
+      quote: "The personalized strategies transformed our daily routines. My son is now more confident and engaged at school, and I have the tools to support him at home.",
+      author: "Sarah Miller",
+      role: "Mother of 7-year-old with ADHD",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
       rating: 5
     },
     {
-      quote: "After struggling for years with my daughter's learning difficulties, the consultation gave us clear direction and practical tools. Her confidence has soared!",
-      author: "Michael T.",
-      role: "Parent of a 10-year-old",
+      quote: "After struggling for years with my daughter's learning difficulties, the consultation gave us clear direction. Her teachers have noticed remarkable improvement in just two months.",
+      author: "Michael Thompson",
+      role: "Father of 10-year-old with dyslexia",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
       rating: 5
     },
     {
-      quote: "The personalized attention to our family's unique situation made all the difference. The consultant truly listened and offered solutions that work for us.",
-      author: "Jennifer P.",
-      role: "Parent of a 5-year-old",
+      quote: "The consultant's patience and expertise helped us understand our child's sensory needs. We now have practical solutions that have reduced meltdowns by almost 80%.",
+      author: "Jennifer Parker",
+      role: "Mother of 5-year-old with sensory processing challenges",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80",
       rating: 5
     }
   ];
@@ -33,10 +36,10 @@ const Testimonials = () => {
               Success Stories
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-brand-neutral-900 mb-6">
-              What Parents Are Saying
+              Families We've Helped
             </h2>
             <p className="text-lg text-brand-neutral-600">
-              Discover how our consultations have helped families overcome challenges and support their children's growth.
+              Hear from parents who have seen remarkable changes in their children after working with our consultants.
             </p>
           </div>
         </FadeIn>
@@ -51,7 +54,7 @@ const Testimonials = () => {
 
         <FadeIn delay={0.4}>
           <div className="mt-16 text-center">
-            <div className="glass-panel rounded-xl p-8 max-w-3xl mx-auto">
+            <div className="bg-brand-blue-50 rounded-xl p-8 max-w-3xl mx-auto">
               <div className="flex justify-center mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star key={star} className="h-6 w-6 text-yellow-400 fill-yellow-400" />
@@ -61,7 +64,7 @@ const Testimonials = () => {
                 <span className="text-brand-neutral-900 font-semibold">4.9 out of 5 stars</span> from over 200 parent reviews
               </p>
               <p className="text-brand-neutral-600">
-                We're committed to providing exceptional support for families and their children.
+                Join the hundreds of families who have transformed their children's lives with our expert guidance.
               </p>
             </div>
           </div>
@@ -71,19 +74,27 @@ const Testimonials = () => {
   );
 };
 
-const TestimonialCard = ({ quote, author, role, rating }: { quote: string, author: string, role: string, rating: number }) => {
+const TestimonialCard = ({ quote, author, role, image, rating }: { quote: string, author: string, role: string, image: string, rating: number }) => {
   return (
-    <div className="h-full glass-panel rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+    <div className="h-full bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-brand-neutral-100 relative">
+      <div className="absolute -top-5 -right-3 text-brand-blue-100">
+        <Quote className="h-20 w-20 rotate-180" />
+      </div>
+      <div className="flex mb-6 items-center">
+        <div className="mr-4">
+          <img src={image} alt={author} className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm" />
+        </div>
+        <div>
+          <p className="font-semibold text-brand-neutral-900">{author}</p>
+          <p className="text-sm text-brand-neutral-500">{role}</p>
+        </div>
+      </div>
       <div className="flex mb-4">
         {Array.from({ length: rating }).map((_, i) => (
-          <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+          <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
         ))}
       </div>
-      <blockquote className="text-brand-neutral-700 mb-6 italic">"{quote}"</blockquote>
-      <div>
-        <p className="font-semibold text-brand-neutral-900">{author}</p>
-        <p className="text-sm text-brand-neutral-500">{role}</p>
-      </div>
+      <blockquote className="text-brand-neutral-700 relative z-10">"{quote}"</blockquote>
     </div>
   );
 };
