@@ -25,7 +25,7 @@ const BookingButton = ({
       variant={variant}
       className={cn(
         'relative overflow-hidden group transition-all duration-300',
-        'bg-brand-blue-500 hover:bg-brand-blue-600',
+        'bg-brand-blue-600 hover:bg-brand-blue-700',
         'text-white font-semibold rounded-full',
         'shadow-sm hover:shadow-lg',
         'px-6 py-2.5 text-[15px]',
